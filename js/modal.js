@@ -16,7 +16,7 @@ class Modal {
 
     center() { // function center ()
         // Distance from top and left to center of modal
-        //console.log("what's in the window height? ", this.$window, this.$window.height());
+        console.log("what's in the window height? ", this.$window, this.$window.height());
         var top = Math.max(this.$window.height() - this.$modal.outerHeight(), 0) / 2;
         var left = Math.max(this.$window.width() - this.$modal.outerWidth(), 0) / 2;
         // Set CSS for the modal
@@ -31,7 +31,7 @@ class Modal {
         this.$modal.css({ // Dimensions
             width: settings.width || 'auto', // Set width
             height: settings.height || 'auto' // Set height
-        }).appendTo('.photo-box'); // Add to page
+        }).appendTo('body'); // Add to page
         this.center(); // Call center() again
         this.$window.on('resize', this.center); // On window resize
     }
